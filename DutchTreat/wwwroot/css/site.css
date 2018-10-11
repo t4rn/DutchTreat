@@ -34,12 +34,12 @@ ul.product-props {
     }
 
 .product-info {
-    border: 1px solid grey;
+    border: 1px solid gray;
     display: inline-block;
     padding: 8px 2px;
     margin: 2px;
     width: 450px;
-    background-color: lightgrey;
+    background-color: lightgray;
     border-radius: 5px;
 }
     .product-info img {
