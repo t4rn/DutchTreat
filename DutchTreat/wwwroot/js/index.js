@@ -3,7 +3,7 @@
     var x = 0;
     var s = "";
 
-    console.log("hello");
+    console.log("hello from index.js");
 
 
 
