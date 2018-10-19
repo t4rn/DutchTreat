@@ -1,14 +1,29 @@
-﻿using DutchTreat.Services;
+﻿using DutchTreat.Data;
+using DutchTreat.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DutchTreat
 {
     public class Startup
     {
+        private readonly IConfiguration _config;
+
+        public Startup(IConfiguration config)
+        {
+            _config = config;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DutchContext>(options =>
+            {
+                options.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
+            });
+
             services.AddTransient<IMailService, NullMailService>();
             services.AddMvc();
         }
