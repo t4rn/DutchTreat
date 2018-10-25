@@ -4,8 +4,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DutchTreat.Data
 {
@@ -18,6 +16,11 @@ namespace DutchTreat.Data
         {
             _ctx = ctx;
             _logger = logger;
+        }
+
+        public void AddEntity(object model)
+        {
+            _ctx.Add(model);
         }
 
         public IEnumerable<Order> GetAllOrders()
@@ -56,7 +59,7 @@ namespace DutchTreat.Data
             return _ctx.Products.Where(p => p.Category == category).ToList();
         }
 
-        public bool SaveChanges()
+        public bool SaveAll()
         {
             return _ctx.SaveChanges() > 0;
         }
