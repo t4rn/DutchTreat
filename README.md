@@ -7,3 +7,4 @@ by Shawn Wildermuth
 cmd: 
 * `dotnet ef database update`
 * `dotnet ef migrations add InitialDb`
+* `dotnet ef database drop`

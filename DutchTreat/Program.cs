@@ -24,7 +24,7 @@ namespace DutchTreat
             using (var score = scopeFactory.CreateScope())
             {
                 var seeder = score.ServiceProvider.GetService<DutchSeeder>();
-                seeder.Seed();
+                seeder.SeedAsync().Wait();
             }
         }
 
