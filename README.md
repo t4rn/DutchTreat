@@ -8,3 +8,12 @@ cmd:
 * `dotnet ef database update`
 * `dotnet ef migrations add InitialDb`
 * `dotnet ef database drop`
+
+npm:
+* `npm -g  install @angular/cli`
+* `npm install`
+
+angular:
+* `ng --version`
+* `ng serve`
+* `ng build --watch`
