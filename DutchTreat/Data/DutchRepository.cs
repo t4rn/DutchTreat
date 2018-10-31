@@ -23,6 +23,17 @@ namespace DutchTreat.Data
             _ctx.Add(model);
         }
 
+        public void AddOrder(Order newOrder)
+        {
+            // convert new products to lookup of product
+            foreach (var item in newOrder.Items)
+            {
+                // works for existing products - if fails that means, that someone crafted a invalid order with nonexisting product
+                item.Product = _ctx.Products.Find(item.Product.Id);
+            }
+            AddEntity(newOrder);
+        }
+
         public IEnumerable<Order> GetAllOrders(bool includeItems)
         {
             if (includeItems)

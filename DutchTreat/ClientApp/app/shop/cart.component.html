@@ -20,3 +20,4 @@
     </tbody>
 
 </table>
+<button routerLink="checkout" class="btn btn-success" *ngIf="data.order.items.length > 0" (click)="onCheckout()">Checkout</button>
