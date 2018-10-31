@@ -16,3 +16,11 @@ angular:
 * `ng --version`
 * `ng serve`
 * `ng build --watch`
+
+gulp:
+* `npm install -g gulp`
+* `gulp`
+* `fulp minify`
+
+run from local publish folder:
+* `dotnet DutchTreat.dll`
