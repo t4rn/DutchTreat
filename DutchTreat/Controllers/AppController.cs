@@ -1,8 +1,13 @@
-﻿using DutchTreat.Data;
+﻿using AutoMapper;
+using DutchTreat.Data;
+using DutchTreat.Data.Entities;
 using DutchTreat.Services;
 using DutchTreat.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DutchTreat.Controllers
@@ -11,11 +16,16 @@ namespace DutchTreat.Controllers
     {
         private readonly IMailService _mailService;
         private readonly IDutchRepository _repository;
+        private readonly ILogger<AppController> _logger;
+        private readonly IMapper _mapper;
 
-        public AppController(IMailService mailService, IDutchRepository repository)
+        public AppController(IMailService mailService, IDutchRepository repository,
+            ILogger<AppController> logger, IMapper mapper)
         {
             _mailService = mailService;
             _repository = repository;
+            _logger = logger;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
@@ -56,6 +66,22 @@ namespace DutchTreat.Controllers
         public IActionResult Shop()
         {
             return View();
+        }
+
+        public IActionResult Orders(bool includeItems = true)
+        {
+            try
+            {
+                string username = User.Identity.Name;
+
+                var results = _repository.GetAllOrders(includeItems);
+                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(results));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to get orders: {ex}");
+                return BadRequest($"Failed to get orders: {ex.Message}");
+            }
         }
     }
 }

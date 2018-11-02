@@ -5497,8 +5497,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Projekty\__kw\DutchTreat\DutchTreat\ClientApp\polyfills.ts */"./polyfills.ts");
-module.exports = __webpack_require__(/*! C:\Projekty\__kw\DutchTreat\DutchTreat\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */"../node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+__webpack_require__(/*! C:\Projekty\_kw\DutchTreat\DutchTreat\ClientApp\polyfills.ts */"./polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Projekty\_kw\DutchTreat\DutchTreat\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */"../node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
 
 
 /***/ })
