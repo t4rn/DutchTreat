@@ -6,7 +6,7 @@
             <td><img src="/img/{{ o.productArtId }}.jpg" alt="o.productTitle" class="img-thumbnail checkout-thumb" /></td>
             <td>{{ o.productCategory }}({{ o.productSize }}) - {{ o.productArtist }}: {{ o.productTitle }}</td>
             <td>{{ o.quantity }}</td>
-            <td>{{ o.unitPrice|currency:'USD':true }}</td>
+            <td>{{ o.unitPrice|currency:'USD':"symbol" }}</td>
             <td>{{ (o.unitPrice * o.quantity)|currency:'USD':"symbol" }}</td>
         </tr>
     </table>
