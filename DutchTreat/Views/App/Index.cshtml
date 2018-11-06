@@ -59,9 +59,18 @@
             </form>
         </div>
     </div>
-    
+
     <div class="col-md-3">
-        <p>asdasdasd</p>
+        <p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <h3>Hello @User.Identity.Name.</h3>
+            }
+            else
+            {
+                <h3>Log in plz.</h3>
+            }
+        </p>
     </div>
 
 </div>
