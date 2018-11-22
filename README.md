@@ -24,3 +24,5 @@ gulp:
 
 run from local publish folder:
 * `dotnet DutchTreat.dll`
+
+deployment scripts in `DutchTreat.csproj`
