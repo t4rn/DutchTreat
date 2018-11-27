@@ -73,7 +73,7 @@ namespace DutchTreat
             //app.UseDefaultFiles();
             app.UseStaticFiles();
 
-            app.UseNodeModules(env);
+            // app.UseNodeModules(env); <- node_modules moved to wwwroot/lib by gulp
 
             app.UseAuthentication();
 
