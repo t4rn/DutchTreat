@@ -26,3 +26,7 @@ run from local publish folder:
 * `dotnet DutchTreat.dll`
 
 deployment scripts in `DutchTreat.csproj`
+
+self-contaied publish:
+* `dotnet publish -o c:\_dutchTreatPublishSelfContained --self-contained`
+* `dotnet DutchTreat.exe`
